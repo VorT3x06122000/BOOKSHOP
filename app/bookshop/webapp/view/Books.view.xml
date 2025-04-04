@@ -1,0 +1,16 @@
+<mvc:View xmlns:smarttable="sap.ui.comp.smarttable" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" controllerName="my.bookshop.bookshop.controller.Books"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <content>
+    <smartfilterbar:SmartFilterBar id="smartfilterbar" entitySet="Books"></smartfilterbar:SmartFilterBar>
+    <smarttable:SmartTable id="smarttable" smartFilterId="smartfilterbar" entitySet="Books">
+    <Table id="idmtable" >
+    <items>
+		<ColumnListItem id="tb1" type="Navigation" press="handlePress"></ColumnListItem>
+	</items>
+    </Table>
+    </smarttable:SmartTable>
+    </content>
+    </Page>
+</mvc:View>
