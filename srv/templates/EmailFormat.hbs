@@ -1,0 +1,23 @@
+<h2>Hello {{Name}},</h2>
+<p>Please Find the error messages in Below Table</p>
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+<thead>
+<tr>
+<th>#NR</th>
+<th>Error Message</th>
+</tr>
+</thead>
+<tbody>
+   {{#each items}}
+<tr>
+<td>{{nr}}</td>
+<td>{{ErrorMessage}}</td>
+</tr>
+   {{/each}}
+</tbody>
+</table>
+<p><strong>Action: Correct the errored records.</strong></p>
+<p>Navigate to Mass Restriction Disposition Log App for more details.</p>
+<p>This is an auto-generated email, do not reply. Please contact the JNJ IT Team for further investigation.</p>
+<p><strong>Regards,</strong></p>
+<p><strong>JNJ IT Team</strong></p>

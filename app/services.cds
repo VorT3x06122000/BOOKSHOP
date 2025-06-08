@@ -6,6 +6,7 @@ annotate CatalogService.Books with {
     ID                      @(title : '{i18n>prodid}');
     title                   @(title : '{i18n>title}');
     stock                   @(title : '{i18n>stck}');
+    FlagRead                @(title : '{i18n>FlagRead}');
 
 } ;
 
@@ -26,6 +27,10 @@ annotate CatalogService.Books with @(UI : {
         {
             Value : stock,
             Label : '{i18n>stck}'
+        },
+        {
+            Value : FlagRead,
+            Label : '{i18n>FlagRead}'
         }
         
     ]

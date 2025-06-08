@@ -1,0 +1,38 @@
+ <core:FragmentDefinition  xmlns="sap.m" xmlns:core="sap.ui.core"  xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+   <Dialog  id="IDdialogfrag" title="{i18n>addbook}" class="sapUiSizeCompact"  titleAlignment="Center"  >
+        <content>
+            <f:SimpleForm id="ediSimpleForm" editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="3"
+            labelSpanL="1"
+            labelSpanM="1"
+            labelSpanS="6"
+            emptySpanXL="4"
+            emptySpanL="1"
+            emptySpanM="1"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1" >
+               <Label id="labelId" text="{i18n>id}" required="true">
+               </Label>
+               <Input id="inpId" value="{/ID}" valueState="{/IDvaluState}" valueStateText="{/IDstateText}" placeholder="Please Enter Integer Only" maxLength="20">
+               </Input>
+               <Label id="idTitlelabl" text="{i18n>title}" required="true">
+               </Label>
+               <Input id="idtitleInp" value="{/title}" valueState="{/TitleState}" valueStateText="{/TitleStateText}" placeholder="Please Enter String Only" maxLength="20">
+               </Input>
+               <Label id="idStcklbl" text="{i18n>stock}" required="true">
+               </Label>
+               <Input id="idstckinp" value="{/stock}" valueState="{/StockState}" valueStateText="{/StockStateText}" placeholder="Please Enter String Only"  maxLength="20">
+               </Input>
+            </f:SimpleForm>
+        </content>
+        <beginButton>
+           <Button type="Emphasized" id="btnsave" text="{i18n>addbook}" press="onPressAddBook"/>
+        </beginButton>
+        <endButton>
+           <Button type="Emphasized" id="btncancel" text="{i18n>cancelButton}" press="onPressCancel"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

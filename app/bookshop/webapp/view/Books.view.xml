@@ -1,15 +1,35 @@
 <mvc:View xmlns:smarttable="sap.ui.comp.smarttable" xmlns:smartfilterbar="sap.ui.comp.smartfilterbar" controllerName="my.bookshop.bookshop.controller.Books"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:ui="sap.ui.table">
     <Page id="page" title="{i18n>title}">
     <content>
     <smartfilterbar:SmartFilterBar id="smartfilterbar" entitySet="Books"></smartfilterbar:SmartFilterBar>
-    <smarttable:SmartTable id="smarttable" smartFilterId="smartfilterbar" entitySet="Books">
-    <Table id="idmtable" >
-    <items>
-		<ColumnListItem id="tb1" type="Navigation" press="handlePress"></ColumnListItem>
-	</items>
-    </Table>
+    <smarttable:SmartTable id="smarttable" smartFilterId="smartfilterbar" entitySet="Books" enableAutoColumnWidth="false">
+    <smarttable:customToolbar>
+    <OverflowToolbar id="overflowtoolbarID">
+    <ToolbarSpacer id="toolbarspacrID"></ToolbarSpacer>
+    <Button id="btnAction" press="onPress" enabled="false" type="Emphasized" text="{i18n>Markasread}"></Button>
+    <Button id="btnAddId" press="onAddPress" enabled="true" type="Emphasized" text="{i18n>addbook}"></Button>
+    </OverflowToolbar>
+    </smarttable:customToolbar>
+    <ui:Table id="oTable" enableColumnFreeze="false" rowSelectionChange="onItemSelect" selectionBehavior="Row" selectionMode="Multi" enableColumnReordering="false" rowActionCount="1" threshold="20" >	
+
+		<!-- <ui:rowMode>
+            <rowmodes:Auto id="idRowM" xmlns:rowmodes="sap.ui.table.rowmodes" minRowCount="5" maxRowCount="5"/>
+        </ui:rowMode> -->
+                           
+        <ui:rowActionTemplate>
+            <ui:RowAction id="rowActn">
+                <ui:items >
+                    <ui:RowActionItem id="rowActnItemId"  press="onRowPress" type="Navigation" ></ui:RowActionItem>
+                </ui:items>
+            </ui:RowAction>
+        </ui:rowActionTemplate>
+
+		<!-- <ui:rowSettingsTemplate>
+            <ui:RowSettings id="idRowHgh" highlight="{path: 'marked', formatter: '.formatter.formatStatusColor'}"/>
+        </ui:rowSettingsTemplate> -->
+
+	</ui:Table>
     </smarttable:SmartTable>
     </content>
     </Page>
